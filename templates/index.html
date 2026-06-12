@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIFE WORLD | ONG Humanitaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('accueil') }}" class="logo">
+                <i class="me"></i>
+                <img class="slife" src="{{ url_for('static', filename='slife.png') }}" alt="">
+
+                SLIFE WORLD
+            </a>
+            <div class="nav-menu">
+                <a href="#accueil" class="active">Accueil</a>
+                <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
+                <a href="#activités">Activités</a>
+                <a href="#approche">Approche</a>
+                <a href="#partenaires">Partenaires</a>
+                <a href="{{ url_for('publications') }}">Publications</a>
+                <a href="#soutenir" class="btn-primary">Nous Soutenir</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">Bienvenue chez SLIFE WORLD</span>
+            <h1 class="hero-title"><dd>Helping people to improve <br>their lives</dd></h1>
+            <p class="st">Aider les gens à améliorer leur vie<br><br></p>
+            <p class="hero-text">Depuis juillet 2015, nous œuvrons pour l'autonomisation des populations et l'amélioration des conditions de vie.</p>
+            <div class="hero-buttons">
+                <a href="#missions" class="btn btn-primary">Découvrir nos missions</a>
+                <a href="#contact" class="btn btn-secondary">Nous soutenir</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img class="img" src="{{ url_for('static', filename='image.png') }}" alt="Communauté unie">
+        </div>
+    </section>
+
+    <!-- À propos / Infos clés -->
+    <section id="qui-sommes-nous">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Création</h3>
+                    <p class="highlight">Juillet 2015</p>
+                    <p>Année de fondation de SLIFE WORLD</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Siège social</h3>
+                    <p class="highlight">RDC, SUD-KIVU</p>
+                    <p>28, Avenue Mbaki, Commune d’Ibanda, Ville de Bukavu</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Notre vision</h3>
+                    <p>Réduire la pauvreté et les mauvaises conditions de vie dans le monde</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions -->
+    <section id="missions" class="missions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Notre raison d'être</span>
+                <h2 class="section-title">Nos missions fondamentales</h2>
+                <p class="section-text">Trois piliers essentiels pour un développement durable et inclusif.</p>
+            </div>
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <div class="mission-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Gestion de l'environnement</h3>
+                    <p>Actions de sensibilisation, lutte contre le changement climatique et gestion durable des ressources pour protéger l’environnement et renforcer la résilience des communautés.</p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('environnement') }}" class="btn btn-primary">voir plus</a>
+                    </div>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon"><i class="fas fa-male"></i></div>
+                    <h3>Autonomisation des Populations</h3>
+                    <p>Projets communautaires pour renforcer l'indépendance et la résilience des communautés.</p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('population') }}" class="btn btn-primary">voir plus</a>
+                    </div>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Bonne Gouvernance</h3>
+                    <p>Promotion de la transparence, de la participation citoyenne et des bonnes pratiques de gestion.</p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('gestion') }}" class="btn btn-primary">voir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistiques d'impact -->
+    <section class="stats-impact">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-impact-item"><span class="stat-number" data-target="5000">0</span><span class="stat-label">Femmes autonomisées</span></div>
+                <div class="stat-impact-item"><span class="stat-number" data-target="7800">0</span><span class="stat-label">Jeunes sensibilisés</span></div>
+                <div class="stat-impact-item"><span class="stat-number" data-target="50">0</span><span class="stat-label">Projets de microfinance</span></div>
+                <div class="stat-impact-item"><span class="stat-number" data-target="48">0</span><span class="stat-label">Communautés soutenues</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Équipe -->
+     <section id="equipe" class="team">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Qui sommes-nous ?</span>
+            <h2 class="section-title">Notre équipe dirigeante</h2>
+            <p class="section-text">Des professionnels engagés au service des communautés.</p>
+        </div>
+        <div class="team-grid">
+            <!-- Membre 1 -->
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="{{ url_for('static', filename='team/Mateger.jpg') }}" alt="Mateger KIKUNI">
+                </div>
+                <h3>Mateger KIKUNI</h3>
+                <p class="team-title">Coordonateur provincial</p>
+                <p class="team-bio">Spécialiste en gouvernance, eau, hygiène et assainissement.</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <!-- Membre 2 -->
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="{{ url_for('static', filename='team/Willy.jpg') }}" alt="Willy RUMANYA">
+                </div>
+                <h3>Willy RUMANYA</h3>
+                <p class="team-title">Coordonateur national</p>
+                <p class="team-bio">Spécialiste en finance publique et gestion.</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <!-- Membre 3 -->
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="{{ url_for('static', filename='team/pierre_bahati.jpg') }}" alt="Lameck WAKULIKILA">
+                </div>
+                <h3>Lameck WAKULIKILA</h3>
+                <p class="team-title">agent de terrain</p>
+                <p class="team-bio">Spécialiste en accompagnement communautaire et organisation sociale.</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <!-- Ajoute d'autres membres ici -->
+        </div>
+    </div>
+</section>
+
+
+    <!-- Domaines d'intervention -->
+    <section id="activités" class="domaines">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Notre champ d'action</span>
+                <h2 class="section-title">Domaines d'intervention</h2>
+                <p class="section-text">Neuf axes prioritaires pour un impact global et durable.</p>
+            </div>
+            <div class="domaines-grid">
+                <div class="domaine-item"><i class="fas fa-chart-line"></i><h4>Réduction de l'extrême pauvreté</h4></div>
+                <div class="domaine-item"><i class="fas fa-coins"></i><h4>Promotion de la microfinance</h4></div>
+                <div class="domaine-item"><i class="fas fa-leaf"></i><h4>Protection de l'environnement et wash</h4></div>
+                <div class="domaine-item"><i class="fas fa-bullhorn"></i><h4>Sensibilisation communautaire</h4></div>
+                <div class="domaine-item"><i class="fas fa-ribbon"></i><h4>Psychosocial, lutte contre le SIDA et violences</h4></div>
+                <div class="domaine-item"><i class="fas fa-shield-virus"></i><h4>Santé</h4></div>
+                <div class="domaine-item"><i class="fas fa-book-open"></i><h4>Éducation pour tous</h4></div>
+                <div class="domaine-item"><i class="fas fa-water"></i><h4>Accès à l'eau potable</h4></div>
+                <div class="domaine-item"><i class="fas fa-seedling"></i><h4>Agriculture et élevage</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approche méthodologique -->
+    <section id="approche" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Approche Méthodologique</h2>
+                <div class="divider"></div>
+                <p>Comment nous travaillons au quotidien pour autonomiser durablement les communautés.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-number">01</div><div class="timeline-content"><h3>Identification & Diagnostic</h3><p>Identification des ILD/OP et évaluation institutionnelle.</p></div></div>
+                <div class="timeline-item"><div class="timeline-number">02</div><div class="timeline-content"><h3>Renforcement des Capacités</h3><p>Formations approfondies sur les aspects organisationnels et techniques.</p></div></div>
+                <div class="timeline-item"><div class="timeline-number">03</div><div class="timeline-content"><h3>Appui aux Projets & Plaidoyer</h3><p>Accompagnement dans le montage de projets, suivi et plaidoyer.</p></div></div>
+                <div class="timeline-item"><div class="timeline-number">04</div><div class="timeline-content"><h3>Évaluation & Capitalisation</h3><p>Mesure des impacts réels, diffusion des résultats.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partenaires -->
+    <section id="partenaires" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center"><h2>Ils nous font confiance</h2><div class="divider"></div></div>
+            <div class="logo-slider">
+                <div class="logo-track">
+                    <span class="logo-badge">Les ILD(Initiative local de développement) dans les communautés</span>
+                    <span class="logo-badge">Les OP(les organisations paysannes) dans les communautés</span>
+                    <span class="logo-badge">Les gouvernements</span>
+                    <span class="logo-badge">Les ONG locale de développement</span>
+                    <span class="logo-badge">Les ONG internationales</span>
+                    <span class="logo-badge">Les ONG régionales</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+     <!-- Section Contact avec formulaire Flask -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Formulaire</span>
+            <h2 class="section-title">Contactez-nous</h2>
+            <p class="section-text">Une question ? Un projet de partenariat ? Écrivez-nous directement.</p>
+        </div>
+
+        <!-- Messages flash (succès/erreur) -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Nos Coordonnées</h3>
+                <p class="contact-desc">N'hésitez pas à nous rendre visite ou à nous joindre.</p>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><h4>Siège social</h4><p>28, Avenue Mbaki, Commune d’Ibanda, Bukavu, SUD-KIVU, RDC</p></div></div>
+                <div class="info-item"><i class="fas fa-envelope"></i><div><h4>E-mail</h4><p>contact@slifeworld.org</p></div></div>
+                <div class="info-item"><i class="fas fa-phone-alt"></i><div><h4>Téléphone</h4><p>+243 000 000 000</p></div></div>
+            </div>
+
+            <div class="contact-form-container">
+                <form method="POST" action="{{ url_for('contact') }}">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="user_name" required placeholder="Ex: Jean Mwamba">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" name="user_email" required placeholder="Ex: jean.m@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Ex: Demande de partenariat">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Votre message ici..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit"><i class="fas fa-paper-plane"></i> Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo"><img class="slife" src="{{ url_for('static', filename='slife.png') }}" alt=""> SLIFE WORLD</div>
+                    <p>ONG humanitaire œuvrant pour l'autonomisation des populations depuis 2015.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="{{ url_for('accueil') }}">Accueil</a></li>
+                        <li><a href="#missions">Nos missions</a></li>
+                        <li><a href="#activités">Domaines d'action</a></li>
+                        <li><a href="#equipe">Notre équipe</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Mentions légales</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#qui-sommes-nous">Qui sommes-nous ?</a></li>
+                        <li><a href="#activités">Activités</a></li>
+                        <li><a href="#approche">Approche</a></li>
+                        <li><a href="#partenaires">Partenaires</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SLIFE WORLD - Tous droits réservés - Création : 2015 - Siège social : RDC, SUD-KIVU, Bukavu</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

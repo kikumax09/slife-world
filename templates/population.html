@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Autonomisation des populations - SLIFE WORLD{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Autonomisation des populations</h1>
+        <p>Renforcer les capacités pour une indépendance durable</p>
+    </div>
+</section>
+
+<section class="page-content">
+    <div class="container">
+        <div class="content-grid">
+            <div class="main-content">
+                <h2>Nos actions pour l'autonomisation</h2>
+                <p>Nous croyons que chaque personne a le potentiel de transformer sa vie. Nos programmes visent à fournir les outils, les connaissances et le soutien nécessaires pour que les communautés deviennent autonomes et résilientes.</p>
+                
+                <h3> Éducation et formation professionnelle</h3>
+                <p>Cours d'alphabétisation, formations en couture, soudure, agriculture moderne et numérique. Plus de 2 000 jeunes formés depuis 2015.</p>
+                
+                <h3> Microfinance et entrepreneuriat</h3>
+                <p>Création de coopératives d'épargne et de crédit, accompagnement à la création de petites entreprises (maraîchage, petit commerce, artisanat).</p>
+                
+                <h3> Autonomisation des femmes et des filles</h3>
+                <p>Programmes de mentorat, bourses scolaires, lutte contre les violences basées sur le genre (VBG).</p>
+                
+                <h3> Insertion socio-économique</h3>
+                <p>Mise en relation avec des marchés, appui à la commercialisation des produits locaux.</p>
+                
+                <div class="impact-box">
+                    <h4>Notre impact en chiffres</h4>
+                    <ul>
+                        <li> 3 200 femmes autonomisées</li>
+                        <li> 500 micro-entreprises créées</li>
+                        <li> 120 groupes d'épargne actifs</li>
+                        <li> 5 000 jeunes formés</li>
+                    </ul>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <h3>Témoignages</h3>
+                <p><em>« Grâce à la formation en couture, j'ai ouvert mon propre atelier et je forme à mon tour d'autres femmes. »</em> – Marie, Bukavu</p>
+                <h3>Projets phares</h3>
+                <ul>
+                    <li>Projet « Elles osent »....</li>
+                    <li>Start-up agricole pour jeunes</li>
+                </ul>
+                <a href="{{ url_for('accueil') }}#contact" class="btn btn-primary">Nous soutenir</a>
+            </aside>
+        </div>
+    </div>
+</section>
+{% endblock %}

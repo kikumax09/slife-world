@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Publications - SLIFE WORLD{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Publications</h1>
+        <p>Rapports, articles et actualités</p>
+    </div>
+</section>
+<section class="publications-list">
+    <div class="container">
+        <div class="publications-grid">
+            <div class="publication-card">
+                <img src="{{ url_for('static', filename='images/pub1.jpg') }}" alt="Rapport 2024">
+                <h3>Rapport d'activités 2024</h3>
+                <p>Bilan de nos 15 projets réalisés.</p>
+                <a href="#">Télécharger PDF</a>
+            </div>
+            <div class="publication-card">
+                <img src="{{ url_for('static', filename='images/pub2.jpg') }}" alt="Article">
+                <h3>Microfinance et femmes rurales</h3>
+                <p>Un levier pour l'autonomisation.</p>
+                <a href="#">Lire l'article</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

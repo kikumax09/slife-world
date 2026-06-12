@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Bonne gouvernance - SLIFE WORLD{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Bonne gouvernance</h1>
+        <p>Transparence, redevabilité et participation citoyenne</p>
+    </div>
+</section>
+
+<section class="page-content">
+    <div class="container">
+        <div class="content-grid">
+            <div class="main-content">
+                <h2>Nos actions pour la bonne gouvernance</h2>
+                <p>Pour un développement durable, les communautés doivent être actrices des décisions qui les concernent. Nous promouvons une gouvernance locale transparente, inclusive et participative.</p>
+                
+                <h3> Renforcement des capacités des organisations locales</h3>
+                <p>Formation des leaders communautaires et des élus locaux à la gestion financière, à la planification participative et à la redevabilité.</p>
+                
+                <h3> Participation citoyenne</h3>
+                <p>Organisation de dialogues communautaires, de consultations publiques et de campagnes de sensibilisation aux droits et devoirs citoyens.</p>
+                
+                <h3> Lutte contre la corruption</h3>
+                <p>Mise en place de comités de vigilance, formation aux mécanismes de signalement, promotion de l'intégrité dans les services publics.</p>
+                
+                <h3> Plaidoyer pour des politiques publiques inclusives</h3>
+                <p>Accompagnement de la société civile dans l'élaboration et le suivi des plans de développement locaux.</p>
+                
+                <div class="impact-box">
+                    <h4>Notre impact en chiffres</h4>
+                    <ul>
+                        <li> 45 organisations locales renforcées</li>
+                        <li> 120 sessions de formation à la gouvernance</li>
+                        <li> 10 comités de vigilance créés</li>
+                        <li> 8 conventions de partenariat signées avec les autorités</li>
+                    </ul>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <h3>Outils développés</h3>
+                <ul>
+                    <li>Guide du leader local </li>
+                    <li>Tableau de bord communautaire</li>
+                </ul>
+                <h3>Partenaires</h3>
+                <p>........</p>
+                <a href="{{ url_for('accueil') }}#contact" class="btn btn-primary">Nous soutenir</a>
+            </aside>
+        </div>
+    </div>
+</section>
+{% endblock %}
