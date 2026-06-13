@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>SLIFE WORLD | ONG Humanitaire</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,26 +13,23 @@
     <nav class="navbar">
         <div class="container">
             <a href="{{ url_for('accueil') }}" class="logo">
-                <i class="me"></i>
-                <img class="slife" src="{{ url_for('static', filename='slife.png') }}" alt="">
-
+                <img src="{{ url_for('static', filename='slife.png') }}" alt="Logo">
                 SLIFE WORLD
             </a>
             <div class="nav-menu">
-                <a href="#accueil" class="active">Accueil</a>
-                <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
-                <a href="#activités">Activités</a>
-                <a href="#approche">Approche</a>
-                <a href="#partenaires">Partenaires</a>
+                <a href="{{ url_for('accueil') }}#accueil">Accueil</a>
+                <a href="{{ url_for('accueil') }}#qui-sommes-nous">Qui sommes-nous ?</a>
+                <a href="{{ url_for('accueil') }}#activités">Activités</a>
+                <a href="{{ url_for('accueil') }}#approche">Approche</a>
+                <a href="{{ url_for('accueil') }}#partenaires">Partenaires</a>
                 <a href="{{ url_for('publications') }}">Publications</a>
-                <a href="#soutenir" class="btn-primary">Nous Soutenir</a>
+                <a href="{{ url_for('accueil') }}#soutenir" class="btn-primary">Nous Soutenir</a>
             </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-content">
