@@ -9,8 +9,9 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "dev-key-change-in-production")
 
+
+
 def envoyer_email(nom, email_visiteur, sujet, message):
-    """Envoie un email via SendGrid (API, pas SMTP)"""
     message_email = Mail(
         from_email=os.getenv("EMAIL_EXPEDITEUR"),
         to_emails=os.getenv("EMAIL_DESTINATAIRE"),
@@ -18,8 +19,12 @@ def envoyer_email(nom, email_visiteur, sujet, message):
         plain_text_content=f"Nom : {nom}\nEmail : {email_visiteur}\n\nMessage :\n{message}"
     )
     sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
-    reponse = sg.send(message_email)
-    print(f"SendGrid response statut: {reponse.statuts_code}")
+    response = sg.send(message_email)
+    # Vérifions le type de response
+    if hasattr(response, 'status_code'):
+        print(f"Status code: {response.status_code}")
+    else:
+        print("Email envoyé, pas de status_code disponible")
 
 # Le reste de ton code (routes, etc.) reste identique
 @app.route("/")
