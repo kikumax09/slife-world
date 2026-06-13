@@ -96,7 +96,7 @@ body {
 }
 
 .logo i {
-    font-size: 2rem;
+    font-size: 12px;
     color: var(--primary-green);
     height: 40px;
     vertical-align: middle;
