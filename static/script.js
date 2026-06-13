@@ -16,14 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCount();
     });
 
-    // Menu mobile toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
+    // Toggle menu mobile
+document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+    document.querySelector('.nav-menu')?.classList.toggle('active');
+});
+
+// Fermer le menu après un clic sur un lien (optionnel)
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-menu')?.classList.remove('active');
+    });
+});
 
     // Exemple de chargement équipe (à adapter)
     const teamGrid = document.getElementById('teamGrid');
