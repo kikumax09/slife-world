@@ -994,3 +994,50 @@ h1, h2, h3, h4 {
 .bg-light { background-color: var(--bg-light); }
 .mt-4 { margin-top: 2rem; }
 .mb-4 { margin-bottom: 2rem; }
+
+/* ========================================
+   PARTENAIRES - SLIDER LOGOS
+   ======================================== */
+.logo-slider {
+    overflow: hidden;
+    padding: 40px 0;
+    position: relative;
+    background: var(--bg-light);
+}
+.logo-slider::before,
+.logo-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+.logo-slider::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-light), transparent);
+}
+.logo-slider::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-light), transparent);
+}
+.logo-track {
+    display: flex;
+    gap: 30px;
+    width: calc(250px * 12); /* assez large pour contenir les répétitions */
+    animation: scrollInfinite 25s linear infinite;
+}
+.logo-badge {
+    background: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--text-dark);
+    white-space: nowrap;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+}
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 6)); }
+}
