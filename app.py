@@ -1,32 +1,56 @@
 import os
 from flask import Flask, render_template, request, flash, redirect, url_for
 from dotenv import load_dotenv
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+from brevo import Configuration, ApiClient
+from brevo.api import transactional_emails_api
+from brevo.model.send_smtp_email import SendSmtpEmail
+from brevo.model.send_smtp_email_to import SendSmtpEmailTo
 
 load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "dev-key-change-in-production")
 
-
-
 def envoyer_email(nom, email_visiteur, sujet, message):
-    message_email = Mail(
-        from_email=os.getenv("EMAIL_EXPEDITEUR"),
-        to_emails=os.getenv("EMAIL_DESTINATAIRE"),
-        subject=f"[SLIFE WORLD] {sujet}",
-        plain_text_content=f"Nom : {nom}\nEmail : {email_visiteur}\n\nMessage :\n{message}"
-    )
-    sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
-    response = sg.send(message_email)
-    # Vérifions le type de response
-    if hasattr(response, 'status_code'):
-        print(f"Status code: {response.status_code}")
-    else:
-        print("Email envoyé, pas de status_code disponible")
+    """Envoie un email via l'API Brevo"""
+    # Configuration de l'API
+    configuration = Configuration()
+    configuration.api_key['api-key'] = os.getenv("BREVO_API_KEY")
+    api_client = ApiClient(configuration)
+    api_instance = transactional_emails_api.TransactionalEmailsApi(api_client)
 
-# Le reste de ton code (routes, etc.) reste identique
+    # Destinataire (l'ONG)
+    destinataire = SendSmtpEmailTo(
+        email=os.getenv("EMAIL_DESTINATAIRE"),
+        name="SLIFE WORLD"
+    )
+
+    # Construction de l'email
+    email_brevo = SendSmtpEmail(
+        to=[destinataire],
+        sender={
+            "name": "SLIFE WORLD",
+            "email": os.getenv("EMAIL_EXPEDITEUR")
+        },
+        subject=f"[SLIFE WORLD] {sujet}",
+        html_content=f"""<html>
+            <body>
+                <h3>Nouveau message depuis le site SLIFE WORLD</h3>
+                <p><strong>Nom :</strong> {nom}</p>
+                <p><strong>Email :</strong> {email_visiteur}</p>
+                <p><strong>Sujet :</strong> {sujet}</p>
+                <p><strong>Message :</strong></p>
+                <p>{message.replace(chr(10), '<br>')}</p>
+            </body>
+        </html>""",
+        text_content=f"Nom : {nom}\nEmail : {email_visiteur}\nSujet : {sujet}\n\nMessage :\n{message}"
+    )
+
+    # Envoi
+    response = api_instance.send_transac_email(email_brevo)
+    print(f"Email envoyé via Brevo, message ID : {response.message_id}")
+
+# Routes (inchangées)
 @app.route("/")
 def accueil():
     return render_template("index.html")
@@ -50,11 +74,11 @@ def contact():
         envoyer_email(nom, email, sujet, message)
         flash("Votre message a été envoyé avec succès. Nous vous répondrons sous 48h.", "success")
     except Exception as e:
+        print(f"Erreur Brevo : {e}")
         flash(f"Erreur technique : {str(e)}. Veuillez réessayer ou nous appeler.", "danger")
     
     return redirect(url_for("accueil") + "#contact")
 
-# Routes pour les autres pages
 @app.route("/environnement.html")
 def environnement():
     return render_template("environnement.html")
